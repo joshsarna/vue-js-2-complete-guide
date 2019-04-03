@@ -1,8 +1,8 @@
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
 <div id="exercise">
-  <button v-on:click="showAlert">Show Alert</button>
-  <input type="text" v-on:keydown.enter="storeValue">
+  <button @click="showAlert">Show Alert</button>
+  <input type="text" @keydown.enter="storeValue">
   <p>{{ value }}</p>
 </div>
 

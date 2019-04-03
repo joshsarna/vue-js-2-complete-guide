@@ -1,8 +1,8 @@
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
 <div id="app">
-  <button v-on:click="increaseCounter">Increase</button>
-  <button v-on:click="decreaseCounter">Decrease</button>
+  <button @click="increaseCounter">Increase</button>
+  <button @click="decreaseCounter">Decrease</button>
   <p>Counter: {{ counter }}</p>
   <p>Result: {{ result }}</p>
 </div>
