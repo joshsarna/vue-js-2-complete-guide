@@ -1,7 +1,7 @@
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
 <div id="app">
-  <button v-on:click="increaseCounter">Click Me</button>
+  <button v-on:click="increaseCounter(2, $event)">Click Me</button>
   <p>{{ counter }}</p>
   <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
 </div>
@@ -16,8 +16,8 @@ new Vue({
     y: 0
   },
   methods: {
-    increaseCounter: function() {
-      this.counter++; 
+    increaseCounter: function(step, event) {
+      this.counter += step; 
     },
     updateCoordinates: function(event) {
       this.x = event.clientX;
