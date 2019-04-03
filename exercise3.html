@@ -1,0 +1,31 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="exercise">
+  <p>Current Value: {{ value }}</p>
+  <button @click="value += 5;">Add 5</button>
+  <button @click="value += 1;">Add 1</button>
+  <p>{{ result }}</p>
+</div>
+
+<script>
+/* global Vue */
+new Vue({
+  el: '#exercise',
+  data: {
+    value: 0
+  },
+  computed: {
+    result: function() {
+      return this.value < 37 ? 'Not there yet...' : 'Done!';
+    }
+  },
+  watch: {
+    result: function() {
+      var vm = this;
+      setTimeout(function() {
+        vm.value = 0;
+      }, 5000);
+    }
+  }
+});
+</script>
