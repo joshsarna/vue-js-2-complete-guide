@@ -1,0 +1,25 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="exercise">
+  <button v-on:click="showAlert">Show Alert</button>
+  <input type="text" v-on:keydown.enter="storeValue">
+  <p>{{ value }}</p>
+</div>
+
+<script>
+/* global Vue */
+new Vue({
+  el: '#exercise',
+  data: {
+    value: ''
+  },
+  methods: {
+    showAlert: function() {
+      alert('Alert, Alert!');
+    },
+    storeValue: function(event) {
+      this.value = event.target.value;
+    }
+  }
+});
+</script>
