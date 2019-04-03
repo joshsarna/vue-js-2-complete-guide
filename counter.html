@@ -4,7 +4,7 @@
   <button v-on:click="increaseCounter(2, $event)">Click Me</button>
   <p>{{ counter }}</p>
   <p v-on:mousemove="updateCoordinates">
-    Coordinates: {{ x }} / {{ y }} - <span v-on:mousemove="dummy">DEAD SPOT</span>
+    Coordinates: {{ x }} / {{ y }} - <span v-on:mousemove.stop="">DEAD SPOT</span>
   </p>
 </div>
 
@@ -24,9 +24,6 @@ new Vue({
     updateCoordinates: function(event) {
       this.x = event.clientX;
       this.y = event.clientY;
-    },
-    dummy: function(event) {
-      event.stopPropagation();
     }
   }
 });
