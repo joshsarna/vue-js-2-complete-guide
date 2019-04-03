@@ -1,0 +1,27 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="exercise">
+  <p>VueJS is pretty cool - {{ name }} ({{ age }})</p>
+  <p>{{ age * 3 }}</p>
+  <p>{{ Math.floor((Math.random() * 100) + 1) }}</p>
+  <div><img v-bind:src="duckling"></div>
+  <div><input type="text" v-bind:value="name"></div>
+</div>
+
+<script>
+  /* global Vue */
+new Vue({
+  el: '#exercise',
+  data: {
+    name: 'Josh',
+    age: 24,
+    duckling: 'https://ae01.alicdn.com/kf/HTB1c2qFOVXXXXcuXXXXq6xXFXXXX/Cute-duckling-diamond-embroidery-5D-DIY-diamond-painting-cross-stitch-resin-picture-full-round-diamond-mosaic.jpg_640x640.jpg'
+  },
+  methods: {
+    sayHello: function() {
+      this.title = 'Hello!';
+      return this.title;
+    }
+  }
+});
+</script>
