@@ -1,11 +1,12 @@
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
 <div id="app">
-  <div class="demo" @click="attachRed = !attachRed" :class="{red: attachRed}"></div>
-  <div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
-  <div class="demo" :class="[color, {red: attachRed}]"></div>
+  <div class="demo" :style="{backgroundColor: color}"></div>
+  <div class="demo" :style="myStyle"></div>
+  <div class="demo"></div>
   <hr>
   <input type="text" v-model="color">
+  <input type="text" v-model="width">
 </div>
 
 <script>
@@ -13,14 +14,14 @@
 new Vue({
   el: '#app',
   data: {
-    attachRed: false,
-    color: 'green'
+    color: 'gray',
+    width: 100
   },
   computed: {
-    divClasses: function() {
+    myStyle: function() {
       return {
-        red: this.attachRed,
-        blue: !this.attachRed
+        backgroundColor: this.color,
+        width: this.width + 'px'
       };
     }
   }
